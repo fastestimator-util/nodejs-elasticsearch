@@ -1,11 +1,16 @@
 const express = require('express');
-const esClient = require('./client');
+var cors = require('cors');
+var fs = require('fs');
+var https = require('https');
+
 const searchDoc = require('./search');
 
 const app = express();
 const bodyparser = require('body-parser');
 
 const port = process.env.PORT || 3200;
+
+app.use(cors());
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ encoded: false }));
@@ -38,6 +43,10 @@ app.get("/search/:text", async (req, res) => {
     }
 })
 
-app.listen(port, () => {
+https.createServer({
+    key: fs.readFileSync('/home/ubuntu/server.key'),
+    cert: fs.readFileSync('/home/ubuntu/server.cert')
+  }, app)
+  .listen(port, () => {
     console.log(`Running at  port ${port}`);
 });
