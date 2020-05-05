@@ -15,8 +15,8 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ encoded: false }));
 
-app.get("/search/:text", async (req, res) => {
-    console.log(`Searching for ${req.params.text}`);
+app.get("/search/:version/:text", async (req, res) => {
+    console.log(`Searching ${req.params.version} for ${req.params.text}`);
 
     const body = {
         query: {
@@ -34,7 +34,7 @@ app.get("/search/:text", async (req, res) => {
     }
 
     try {
-        const resp = await searchDoc('fe1.0', body);
+        const resp = await searchDoc('fe' + req.params.version, body);
 
         res.status(200).send(resp);
     } catch (e) {
