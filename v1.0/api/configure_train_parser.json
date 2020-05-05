@@ -1,0 +1,1 @@
+{"link": "https://www.fastestimator.org/api/fe/cli/configure_train_parser", "body": "configure_train_parser configure_train_parser(subparsers:'A...') -> None Add a training parser to an existing argparser. Args: subparsers : The parser object to be appended to. ", "title": "configure_train_parser"}

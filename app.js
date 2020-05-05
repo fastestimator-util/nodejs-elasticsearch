@@ -17,9 +17,9 @@ app.use(bodyparser.urlencoded({ encoded: false }));
 
 app.get("/search/:text", async (req, res) => {
     console.log(`Searching for ${req.params.text}`);
-    
+
     const body = {
-        query: { 
+        query: {
             "multi_match": {
                 "query" : req.params.text,
                 "fields": ["title^3", "body"],
@@ -33,7 +33,7 @@ app.get("/search/:text", async (req, res) => {
         }
     }
 
-    try { 
+    try {
         const resp = await searchDoc('fe', body);
 
         res.status(200).send(resp);
@@ -44,8 +44,8 @@ app.get("/search/:text", async (req, res) => {
 })
 
 https.createServer({
-    key: fs.readFileSync('/home/ubuntu/server.key'),
-    cert: fs.readFileSync('/home/ubuntu/server.cert')
+    key: fs.readFileSync('./server.key'),
+    cert: fs.readFileSync('./server.cert')
   }, app)
   .listen(port, () => {
     console.log(`Running at  port ${port}`);

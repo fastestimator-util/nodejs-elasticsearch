@@ -1,0 +1,1 @@
+{"link": "https://www.fastestimator.org/api/fe/util/get_batch_size", "body": "get_batch_size get_batch_size(data:Dict[str, Any]) -> int Infer batch size from a batch dictionary. Args: data : The batch dictionary. Returns: batch size.", "title": "get_batch_size"}
