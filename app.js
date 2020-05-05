@@ -21,20 +21,20 @@ app.get("/search/:text", async (req, res) => {
     const body = {
         query: {
             "multi_match": {
-                "query" : req.params.text,
+                "query": req.params.text,
                 "fields": ["title^3", "body"],
                 "fuzziness": "auto"
             }
         },
-        highlight : {
-            "fields" : {
-                "body" : {}
+        highlight: {
+            "fields": {
+                "body": {}
             }
         }
     }
 
     try {
-        const resp = await searchDoc('fe', body);
+        const resp = await searchDoc('fe1.0', body);
 
         res.status(200).send(resp);
     } catch (e) {
@@ -46,7 +46,7 @@ app.get("/search/:text", async (req, res) => {
 https.createServer({
     key: fs.readFileSync('./server.key'),
     cert: fs.readFileSync('./server.cert')
-  }, app)
-  .listen(port, () => {
-    console.log(`Running at  port ${port}`);
-});
+}, app)
+    .listen(port, () => {
+        console.log(`Running at  port ${port}`);
+    });
