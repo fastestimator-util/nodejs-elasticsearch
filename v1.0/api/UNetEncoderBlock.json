@@ -1,1 +1,1 @@
-{"link": "https://www.fastestimator.org/api/fe/architecture/pytorch/UNetEncoderBlock", "body": "", "title": "UNetEncoderBlock"}
+{"link": "https://www.fastestimator.org/api/fe/architecture/pytorch/UNetEncoderBlock", "body": "UNetEncoderBlock UNetEncoderBlock(in_channels:int, out_channels:int) -> None A UNet encoder block. Args: in_channels : How many channels enter the encoder. out_channels : How many channels leave the encoder. ", "title": "UNetEncoderBlock"}

@@ -1,1 +1,1 @@
-{"link": "https://www.fastestimator.org/api/fe/util/NonContext", "body": "", "title": "NonContext"}
+{"link": "https://www.fastestimator.org/api/fe/util/NonContext", "body": "NonContext NonContext() A class which is used to make nothing unusual happen. a = 5with fe.util.NonContext():a = a + 37print(a) # 42 ", "title": "NonContext"}
