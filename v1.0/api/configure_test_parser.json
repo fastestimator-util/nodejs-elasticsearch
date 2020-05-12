@@ -1,1 +1,0 @@
-{"link": "https://www.fastestimator.org/api/fe/cli/configure_test_parser", "body": "configure_test_parser configure_test_parser(subparsers:'A...') -> None Add a testing parser to an existing argparser. Args: subparsers : The parser object to be appended to. ", "title": "configure_test_parser"}
