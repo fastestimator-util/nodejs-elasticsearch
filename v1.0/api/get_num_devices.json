@@ -1,1 +1,0 @@
-{"link": "https://www.fastestimator.org/api/fe/util/get_num_devices", "body": "get_num_devices get_num_devices() Determine the number of available GPUs. Returns: The number of available GPUs, or 1 if none are found.", "title": "get_num_devices"}
