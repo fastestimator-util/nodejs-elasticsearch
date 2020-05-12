@@ -20,10 +20,24 @@ app.get("/search/:version/:text", async (req, res) => {
 
     const body = {
         query: {
-            "multi_match": {
-                "query": req.params.text,
-                "fields": ["title^3", "body"],
-                "fuzziness": "auto"
+            "dis_max": {
+                "queries": [
+                    {
+                        "match": {
+                            "title": {
+                                "query": req.params.text,
+                                "fuzziness": "auto",
+                                "boost": 3
+                            }
+
+                        }
+                    },
+                    {
+                        "match": {
+                            "body": req.params.text`
+                        }
+                    }
+                ]
             }
         },
         highlight: {
