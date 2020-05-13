@@ -34,10 +34,11 @@ app.get("/search/:version/:text", async (req, res) => {
                     },
                     {
                         "match": {
-                            "body": req.params.text`
+                            "body": req.params.text
                         }
                     }
-                ]
+                ],
+                "tie_breaker": 0.7
             }
         },
         highlight: {
