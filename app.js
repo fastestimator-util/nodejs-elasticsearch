@@ -49,7 +49,7 @@ app.get("/search/:version/:text", async (req, res) => {
     }
 
     try {
-        const resp = await searchDoc('fe' + req.params.version, body);
+        const resp = await searchDoc(req.params.version, body); 
 
         res.status(200).send(resp);
     } catch (e) {

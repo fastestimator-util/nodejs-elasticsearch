@@ -14,9 +14,9 @@ def load_index(dir, index_version):
             payload = json.read()
 
             print (payload)
-            print ("http://localhost:9200/fe"  + index_version + "/_doc/" + os.path.splitext(name)[0])
+            print ("http://localhost:9200/"  + index_version + "/_doc/" + os.path.splitext(name)[0])
 
-            r = requests.post("http://localhost:9200/fe" + index_version + "/_doc/" + name, data=payload, headers=headers)
+            r = requests.post("http://localhost:9200/" + index_version + "/_doc/" + name, data=payload, headers=headers)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="FE ES loader script")
@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    load_index(args.directory, args.index_version)
+    load_index(args.directory, args.index_version) # the prefix "fe" need to be drop in the future
