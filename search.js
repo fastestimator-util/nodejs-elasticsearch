@@ -21,7 +21,7 @@ async function test() {
     }
 
     try {
-        const resp = await searchDoc('fe1.0', body);
+        const resp = await searchDoc('fe1.0', body); // hard-coded test
         // console.log(resp);
         console.log(resp.hits[0]);
     } catch (e) {
